@@ -48,7 +48,7 @@ register(
     "krzysiu.net", 
     "December 2015",
     "<Image>/Filters/Krzysiu/Highlight selection", 
-    "RGB*", 
+    "", 
     [
         (PF_COLOR, "in_bg_color", "Color of background:", (255, 0, 0)), #ok
         (PF_SLIDER, "in_bg_opacity", "Opacity of background (%; 0=off):", 10, (0, 100, 1)), # ok
@@ -56,7 +56,7 @@ register(
         (PF_SLIDER, "in_border_opacity", "Opacity of border (%; 0=off):", 90, (0, 100, 1)), # ok
         (PF_SPINNER, "in_border_size", "Border size (px):", 2, (1, 100, 1)), # ok
         (PF_SPINNER, "in_border_radius", "Border radius (%):", 30, (0, 100, 1)),
-        (PF_OPTION, "in_border_type", "Border type:", 0, ["Outter","Inner","Middle"]) # ok
+        (PF_OPTION, "in_border_type", "Border type:", 0, ["Outer","Inner","Middle"]) # ok
     ], 
     [],
     highlight_selection,
