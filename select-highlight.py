@@ -1,0 +1,65 @@
+#!/usr/bin/env python
+
+from gimpfu import *
+
+def highlight_selection(image, drawable, in_bg_color, in_bg_opacity, in_border_color, in_border_opacity, in_border_size, in_border_radius, in_border_type) :
+    gimp.context_push()
+    image.undo_group_start()
+    
+    layer = pdb.gimp_layer_new_from_drawable(drawable, image)
+    pdb.gimp_image_add_layer(image, layer, -1)
+    pdb.gimp_layer_add_alpha(layer)
+    
+    pdb.gimp_context_set_background(in_border_color)
+
+    if in_border_radius>0:
+        pdb.script_fu_selection_rounded_rectangle(image, layer, in_border_radius, 0)   
+        
+    if in_border_type==0:
+        pdb.gimp_selection_grow(image, in_border_size)
+    elif in_border_type==2:
+        pdb.gimp_selection_grow(image, in_border_size/2)
+        
+    if in_border_opacity>0:
+        pdb.gimp_edit_bucket_fill_full(layer, BG_BUCKET_FILL, NORMAL_MODE, in_border_opacity, 0, True, False, SELECT_CRITERION_COMPOSITE, 0, 0)
+        pdb.gimp_selection_shrink(image, in_border_size)
+        pdb.gimp_edit_clear(layer)
+    
+
+    if in_bg_opacity>0:
+        pdb.gimp_context_set_background(in_bg_color)
+        pdb.gimp_edit_bucket_fill_full(layer, BG_BUCKET_FILL, NORMAL_MODE, in_bg_opacity, 0, True, False, SELECT_CRITERION_COMPOSITE, 0, 0) 
+    
+    pdb.gimp_image_merge_down(image, layer, EXPAND_AS_NECESSARY)
+
+    image.undo_group_end()
+    gimp.displays_flush()
+    gimp.context_pop()
+
+    return
+
+# Registration
+
+register(
+    "krzysiu_select_red",    
+    "Highlight selection",   
+    "Highlight selection",
+    "Krzysztof Blachnicki", 
+    "krzysiu.net", 
+    "December 2015",
+    "<Image>/Filters/Krzysiu/Highlight selection", 
+    "RGB*", 
+    [
+        (PF_COLOR, "in_bg_color", "Color of background:", (255, 0, 0)), #ok
+        (PF_SLIDER, "in_bg_opacity", "Opacity of background (%; 0=off):", 10, (0, 100, 1)), # ok
+        (PF_COLOR, "in_border_color", "Border color:", (255, 0, 0)), #ok
+        (PF_SLIDER, "in_border_opacity", "Opacity of border (%; 0=off):", 90, (0, 100, 1)), # ok
+        (PF_SPINNER, "in_border_size", "Border size (px):", 2, (1, 100, 1)), # ok
+        (PF_SPINNER, "in_border_radius", "Border radius (%):", 30, (0, 100, 1)),
+        (PF_OPTION, "in_border_type", "Border type:", 0, ["Outter","Inner","Middle"]) # ok
+    ], 
+    [],
+    highlight_selection,
+    )
+
+main()
