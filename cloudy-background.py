@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
 from gimpfu import *
-import random
+from random import randint
 from math import fmod
 
 def krzysiu_cloudy_background(image, drawable, in_bg_color, in_blur_strength, in_bg_layer) :
+    MAXINT32 = 2147483647
+    MAXBYTE = 255
+    
     gimp.context_push()
     image.undo_group_start()
     
@@ -16,13 +19,13 @@ def krzysiu_cloudy_background(image, drawable, in_bg_color, in_blur_strength, in
     else:
         workspace = drawable
     
-    pdb.plug_in_plasma(image, workspace, random.randint(0, 2147483647), 0.2)
+    pdb.plug_in_plasma(image, workspace, randint(0, MAXINT32), 0.2)
     if in_blur_strength>0:
         pdb.plug_in_gauss(image, workspace, in_blur_strength, in_blur_strength, 1)
     
-    bg_color_r = float(in_bg_color[0])/255
-    bg_color_g = float(in_bg_color[1])/255
-    bg_color_b = float(in_bg_color[2])/255
+    bg_color_r = float(in_bg_color[0]) / MAXBYTE
+    bg_color_g = float(in_bg_color[1]) / MAXBYTE
+    bg_color_b = float(in_bg_color[2]) / MAXBYTE
     
     bg_color_max = max(bg_color_r, bg_color_g, bg_color_b)
     bg_color_min = min(bg_color_r, bg_color_g, bg_color_b)
@@ -34,12 +37,15 @@ def krzysiu_cloudy_background(image, drawable, in_bg_color, in_blur_strength, in
         bg_color_s = 0
     else:
         bg_color_s = bg_color_delta / (1 - abs(2 * bg_color_l - 1)) * 100
+        
         if bg_color_max==bg_color_r:
             bg_color_h = 60 * fmod(((bg_color_g-bg_color_b) / bg_color_delta), 6)
             if bg_color_b > bg_color_g:
                 bg_color_h += 360
+                
         if bg_color_max==bg_color_g:
             bg_color_h = 60 * ((bg_color_b - bg_color_r) / bg_color_delta + 2)
+            
         if bg_color_max==bg_color_b:
             bg_color_h = 60 * ((bg_color_r - bg_color_g) / bg_color_delta + 4)
 
