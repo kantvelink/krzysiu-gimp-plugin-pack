@@ -37,8 +37,6 @@ def highlight_selection(image, drawable, in_bg_color, in_bg_opacity, in_border_c
 
     return
 
-# Registration
-
 register(
     "krzysiu_select_red",    
     "Highlight selection",   
@@ -46,7 +44,7 @@ register(
     "Krzysztof Blachnicki", 
     "krzysiu.net", 
     "December 2015",
-    "<Image>/Filters/Krzysiu/Highlight selection", 
+    "<Image>/Filters/Krzysiu/Highlight selection...", 
     "*", 
     [
         (PF_COLOR, "in_bg_color", "Color of background:", (255, 0, 0)),
