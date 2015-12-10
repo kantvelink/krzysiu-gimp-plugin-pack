@@ -37,7 +37,7 @@ def krzysiu_cloudy_background(image, drawable, in_bg_color, in_blur_strength, in
     if bg_color_delta == 0:
         bg_color_h = 0
         bg_color_s = 0
-        else:
+    else:
         bg_color_s = bg_color_delta / (1 - abs(2 * bg_color_l - 1)) * 100
 
         if bg_color_max == bg_color_r:
@@ -63,12 +63,12 @@ def krzysiu_cloudy_background(image, drawable, in_bg_color, in_blur_strength, in
 
 register(
     "krzysiu_cloudy_background",
-    "Render cloudy background...",
+    "Render cloudy background",
     "Renders plasma and colorize it",
     "Krzysztof Blachnicki",
     "krzysiu.net",
     "September 2014",
-    "<Image>/Filters/Krzysiu/Render cloudy background",
+    "<Image>/Filters/Krzysiu/Render cloudy background...",
     "*",
     [
         (PF_COLOR, "in_bg_color", "Color:", (40, 134, 222)),
