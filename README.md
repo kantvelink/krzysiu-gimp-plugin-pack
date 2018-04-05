@@ -8,7 +8,7 @@ For the installation, requiments, list of plugins with description, usage and ex
 + [Dreamy picture](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Dreamy-picture) <sub>`dreamy-picture.py`</sub> - variation of Orton effect - creates dream alike pictures - glowing objects with intense colors
 + [Add number layers](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Add-number-layers) <sub>`add-number-layers.py`</sub> - generates layers with numbers - possible aligning, formatting (like *001*), applying background for generated layers and a lot more
 + [Animate hue](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Animate-hue) <sub>`animate-hue.py`</sub> - generates colorized layers, which are ready to use for GIF animation
-+ [Watermark file with SVG](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Watermark-file-with-SVG) <sub>`watermark-image.py`</sub> - adds SVG watermark to image with relative size and margins
++ [Watermark file with SVG](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Watermark-file-with-SVG) <sub>`watermark-image.py` + example: `watermark-image.svg`</sub> - adds SVG watermark to image with relative size and margins
 
 ## Changelog
 ### 05.04.2018
