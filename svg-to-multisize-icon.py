@@ -107,7 +107,7 @@ register(
     "<Image>/Filters/Krzysiu/SVG to multisize icon...", 
     "*", 
     [
-        (PF_FILE, "in_file_name", "Watermark file:", ""),
+        (PF_FILE, "in_file_name", "Input SVG file:", ""),
         (PF_BOOL, "icon_16", "Include 16x16:", True),
         (PF_BOOL, "icon_32", "Include 32x32:", True),
         (PF_BOOL, "icon_48", "Include 48x48:", True),
