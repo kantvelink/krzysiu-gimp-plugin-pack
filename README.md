@@ -12,6 +12,10 @@ For the installation, requiments, list of plugins with description, usage and ex
 + [SVG to multisize icon](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/SVG-to-multisize-icon) <sub>`svg-to-multisize-icon.py`</sub> - imports SVG file to create multisize icon. It utilizes the vector imaging power by importing different sizes - not just resizing in Gimp
 
 ## Changelog
+### 13.09.2018
++ Added new plugin: **Bounce animation**
++ Removed debug procedures from **Watermark file with SVG**
+
 ### 03.05.2018
 + Added new plugin: **SVG to multisize icon**
 
