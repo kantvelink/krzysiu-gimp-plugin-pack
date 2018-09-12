@@ -4,10 +4,6 @@ from gimpfu import *
 import os
 import gtk
 
-import sys
-sys.stderr = open('c:\\gimpstderr.txt', 'w')
-sys.stdout = open('c:\\gimpstdout.txt', 'w')
-
 def watermark_from_svg(image, drawable, in_file_name, in_set_default, in_watermark_width, in_watermark_margin, in_placement, in_opacity, in_invert):
     
     if os.path.isfile(in_file_name)==False:
