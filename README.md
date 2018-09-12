@@ -9,7 +9,7 @@ For the installation, requiments, list of plugins with description, usage and ex
 + [Add number layers](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Add-number-layers) <sub>`add-number-layers.py`</sub> - generates layers with numbers - possible aligning, formatting (like *001*), applying background for generated layers and a lot more
 + [Animate hue](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Animate-hue) <sub>`animate-hue.py`</sub> - generates colorized layers, which are ready to use for GIF animation
 + [Watermark file with SVG](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Watermark-file-with-SVG) <sub>`watermark-image.py` + example: `watermark-image.svg`</sub> - adds SVG watermark to image with relative size and margins
-+ [SVG to multisize icon](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/SVG-to-multisize-icon) <sub>`svg-to-multisize-icon.py`</sub> - imports SVG file to create multisize icon. It utilizes the vector imaging power by importing different sizes - not just resizing in Gimp.
++ [SVG to multisize icon](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/SVG-to-multisize-icon) <sub>`svg-to-multisize-icon.py`</sub> - imports SVG file to create multisize icon. It utilizes the vector imaging power by importing different sizes - not just resizing in Gimp
 
 ## Changelog
 ### 03.05.2018
