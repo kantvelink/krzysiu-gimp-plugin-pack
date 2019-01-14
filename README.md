@@ -10,8 +10,13 @@ For the installation, requiments, list of plugins with description, usage and ex
 + [Animate hue](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Animate-hue) <sub>`animate-hue.py`</sub> - generates colorized layers, which are ready to use for GIF animation
 + [Watermark file with SVG](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Watermark-file-with-SVG) <sub>`watermark-image.py` + example: `watermark-image.svg`</sub> - adds SVG watermark to image with relative size and margins
 + [SVG to multisize icon](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/SVG-to-multisize-icon) <sub>`svg-to-multisize-icon.py`</sub> - imports SVG file to create multisize icon. It utilizes the vector imaging power by importing different sizes - not just resizing in Gimp
++ [Bounce animation](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Bounce-animation) <sub>`bonuce-animation.py`</sub> - converts animation to infinite loop (e.g. `1 2 3 4 <sub>1 2 3 4 1 2...</sub>` to `1 2 3 4 <sub>3 2 1 2 3 4 3...</sub>`
++ [Multiply canvas size](https://github.com/Krzysiu/krzysiu-gimp-plugin-pack/wiki/Multiply-canvas-size) <sub>`multiply-canvas-size.py`</sub> - multiplies canvas size (e.g. width x2, height x3) and optionally adds guide lines
 
 ## Changelog
+### 14.01.2019
++ Added new plugin: **Multiply canvas size**
+
 ### 13.09.2018
 + Added new plugin: **Bounce animation**
 + Removed debug procedures from **Watermark file with SVG**
